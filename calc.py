@@ -1,26 +1,44 @@
 # import math
+from unittest import result
+
+
 def calcul_ver_1():
-    x = int(input("Введите первое число "))
-    y = int(input("Введите второе число "))
-    z = input("Введите операцию(+, *, -, /, возведение в степень ** ) ")
+    while True:
+        print("Выберите операцию:\n"
+              "Сложение: +\n"
+              "Умножение: *\n"
+              "Вычитание: -\n"
+              "Деление: /\n"
+              "Возведение в степень: **\n"
+              "Закрыть программу: q\n")
+        operation = input("Ввод: ")
+        if operation == 'q':
+            print("Конец программы")
+            break
 
-    if z == '+':
-        result = x + y
-    elif z == '*':
-        result = x * y
-    elif z == '-':
-        result = x - y
-    elif z == '**':
-        result = x ** y
-    elif z == '/' and y != 0:
-        result = x / y
-    if y == 0 and z == '/':
-        result = 'Деление на ноль невозможно'
+        if operation in ('+', '*', '-', '/', '**'):
+            x = float(input("x= "))
+            y = float(input("y = "))
 
-    print(result)
+            if operation == '+':
+                result = (x, y, int(x + y))
+            elif operation == '*':
+                result = (x, y, int(x * y))
+            elif operation == '-':
+                result = (x, y, int(x - y))
+            elif operation == '**':
+                result = (x, y, int(x ** y))
+            elif operation == '/':
+                if y != 0:
+                    result = (x, y, int(x / y))
+                else:
+                    print('Деление на ноль невозможно')
+        print(result)
 
 
-calcul_ver_1()
+
+
+print(calcul_ver_1())
 
 # a = 2
 # b = 3
