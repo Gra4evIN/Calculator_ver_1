@@ -1,5 +1,6 @@
 import math
-
+improt tkinter
+from tkinter import *
 
 def calcul_ver_1():
     global result
